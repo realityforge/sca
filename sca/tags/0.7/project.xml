@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project>
+    <pomVersion>3</pomVersion>
+    <currentVersion>1.0</currentVersion>
+    <groupId>spice</groupId>
+
+    <name>Spice SCA</name>
+    <id>spice-sca</id>
+    <currentVersion>0.7</currentVersion>
+    <inceptionYear>1999</inceptionYear>
+
+    <shortDescription>Scalable Communications Architecture.</shortDescription>
+
+    <description>
+        Components to create a Scalable Communications Architecture.
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>mockobjects</groupId>
+            <artifactId>mockobjects-core</artifactId>
+            <version>0.09</version>
+        </dependency>
+        <dependency> <!-- to generate metadata -->
+            <groupId>metaclass</groupId>
+            <artifactId>maven-metaclass-plugin</artifactId>
+            <version>1.1</version>
+            <type>plugin</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/java</sourceDirectory>
+        <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+        <unitTest>
+            <includes>
+                <include>**/*TestCase.*</include>
+            </includes>
+        </unitTest>
+    </build>
+
+</project>
