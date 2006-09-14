@@ -6,7 +6,7 @@
 
     <name>Spice SCA</name>
     <id>spice-sca</id>
-    <currentVersion>0.7</currentVersion>
+    <currentVersion>1.0</currentVersion>
     <inceptionYear>1999</inceptionYear>
 
     <shortDescription>Scalable Communications Architecture.</shortDescription>
@@ -21,11 +21,10 @@
             <artifactId>mockobjects-core</artifactId>
             <version>0.09</version>
         </dependency>
-        <dependency> <!-- to generate metadata -->
-            <groupId>metaclass</groupId>
-            <artifactId>maven-metaclass-plugin</artifactId>
-            <version>1.1</version>
-            <type>plugin</type>
+        <dependency>
+            <groupId>panmx</groupId>
+            <artifactId>panmx</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

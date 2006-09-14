@@ -7,6 +7,12 @@
  */
 package org.realityforge.sca.connector;
 
+import panmx.annotations.Impact;
+import panmx.annotations.MBean;
+import panmx.annotations.MxAttribute;
+import panmx.annotations.MxOperation;
+import panmx.annotations.MxField;
+
 /**
  * The Connector is a base class for connectors. Connectors establish a
  * connection to a resource and attempt to maintain the connection and reconnect
@@ -16,6 +22,7 @@ package org.realityforge.sca.connector;
  * @version $Revision: 1.1 $ $Date: 2004/06/21 05:54:29 $
  * @mx.component
  */
+@MBean
 public class Connector
 {
     /** The associated ping policy for connector. */
@@ -182,6 +189,8 @@ public class Connector
      * @return the time at which last ping occured.
      * @mx.attribute
      */
+    @MxAttribute( description = "The time the last ping occured",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public long getLastPingTime()
     {
         return m_lastPingTime;
@@ -193,6 +202,8 @@ public class Connector
      * @return the time at which last transmission occured.
      * @mx.attribute
      */
+    @MxAttribute( description = "The time the last tx occured",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public long getLastTxTime()
     {
         return m_lastTxTime;
@@ -204,6 +215,8 @@ public class Connector
      * @return the last message transmitted.
      * @mx.attribute
      */
+    @MxAttribute( description = "The last message txed",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public Object getLastTxMessage()
     {
         return m_lastTxMessage;
@@ -215,6 +228,8 @@ public class Connector
      * @return the time at which last receive occured.
      * @mx.attribute
      */
+    @MxAttribute( description = "The last time a message was rxed",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public long getLastRxTime()
     {
         return m_lastRxTime;
@@ -226,6 +241,8 @@ public class Connector
      * @return the last message received.
      * @mx.attribute
      */
+    @MxAttribute( description = "The last message rxed",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public Object getLastRxMessage()
     {
         return m_lastRxMessage;
@@ -237,6 +254,8 @@ public class Connector
      * @return true if connector is active.
      * @mx.attribute
      */
+    @MxAttribute( description = "Whether the connector is active",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public boolean isActive()
     {
         return m_active;
@@ -249,6 +268,7 @@ public class Connector
      * inactive.
      * @mx.attribute
      */
+    @MxAttribute( )
     public void setActive( final boolean active )
     {
         m_active = active;
@@ -260,6 +280,8 @@ public class Connector
      * @return true if Connector connected.
      * @mx.attribute
      */
+    @MxAttribute( description = "Whether the connector is connected",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public boolean isConnected()
     {
         return m_connected;
@@ -281,6 +303,8 @@ public class Connector
      * @return the time the last connection attempt started.
      * @mx.attribute
      */
+    @MxAttribute( description = "The time the last connection attempt started",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public long getLastConnectionTime()
     {
         return m_lastConnectionTime;
@@ -292,6 +316,8 @@ public class Connector
      * @return the number of sequential failed connection attempts.
      * @mx.attribute
      */
+    @MxAttribute( description = "The number of sequential failed connection attempts",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public int getConnectionAttempts()
     {
         return m_connectionAttempts;
@@ -304,6 +330,8 @@ public class Connector
      * @return the last connection error
      * @mx.attribute
      */
+    @MxAttribute( description = "The error for the last connection attempt",
+      fields = @MxField( name = "currencyTimeLimit", value = "-1" ) )
     public String getConnectionError()
     {
         return m_connectionError;
@@ -314,6 +342,7 @@ public class Connector
      *
      * @mx.operation
      */
+    @MxOperation( description = "Make the connector connect", impact = Impact.ACTION )
     public void connect()
     {
         final long now = System.currentTimeMillis();
@@ -363,6 +392,7 @@ public class Connector
      *
      * @mx.operation
      */
+    @MxOperation( description = "Make the connector disconnect", impact = Impact.ACTION )
     public void disconnect()
     {
         synchronized( getSyncLock() )
