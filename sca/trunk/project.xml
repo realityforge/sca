@@ -6,7 +6,7 @@
 
     <name>Spice SCA</name>
     <id>spice-sca</id>
-    <currentVersion>1.0</currentVersion>
+    <currentVersion>1.1-dev</currentVersion>
     <inceptionYear>1999</inceptionYear>
 
     <shortDescription>Scalable Communications Architecture.</shortDescription>
